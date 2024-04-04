@@ -49,21 +49,28 @@ function readFile(filename) {
 */
 function calculateAverageNumberOfLines(dataFileName, termsFileName) {
   try {
+    let searchCounter = new Map();
     let counter = 0;
 
     const searchTerms = readFile(termsFileName);
     const data = readFile(dataFileName);
 
     // matches if any of the terms are present in the line
-    const searchPattern = new RegExp(searchTerms.join("|"));
+    searchTerms.forEach((term) => searchCounter.set(term, 0));
 
     data.forEach((line) => {
-      if (searchPattern.test(line)) {
-        counter++;
-      }
+      searchTerms.forEach((term) => {
+        const searchPattern = new RegExp(term);
+        if (searchPattern.test(line)) {
+          searchCounter.set(term, searchCounter.get(term) + 1);
+        }
+      });
     });
 
-    return counter / searchTerms.length;
+    let totalLinesMatched = 0;
+    searchCounter.forEach((count) => (totalLinesMatched += count));
+
+    return totalLinesMatched / searchTerms.length;
   } catch (err) {
     console.log(err.message);
     throw err;
@@ -75,7 +82,6 @@ function calculateAverageNumberOfLines(dataFileName, termsFileName) {
  *
  * @param {number} average - result
  */
-
 function printResult(average) {
   console.log("\n|------------------------------|\n|\tOUTPUT\t\t       |");
   console.log("|------------------------------|");
