@@ -1,0 +1,15 @@
+Data.txt is a text file containing a list of random strings
+SearchTerms.txt is a text file containing a list of search terms
+
+What is the average number of lines found in Data.txt that contain a search term?
+
+For any one of the search terms there will be a number of lines in 
+Data.txt that contain that search term.
+
+We want the average number of lines of Data.txt for all the 
+search terms in the SearchTerm file. Find the total 
+number lines of data.txt which have one or more 
+occurrences of each search item, add it up and then find 
+the average lines by dividing it by the count of searchItems.
+
+Send your answer to: recruitment@accountsiq.com

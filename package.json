@@ -1,0 +1,16 @@
+{
+  "name": "accountsiq",
+  "description": "Data.txt is a text file containing a list of random strings\r SearchTerms.txt is a text file containing a list of search terms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start-test": "npx jest && node src/index.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
