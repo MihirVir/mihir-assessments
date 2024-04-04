@@ -16,6 +16,7 @@ Project Structure:
 
 Installation And Setup Guide:
     1) With Docker:
+        -> Make sure you have Docker Desktop Downloaded and running in the background.
         -> Use the following command to build the image [NOTE: Please copy the entire command below
            including the . (dot) part as it refers to current director in which the Dockerfile is present]:
 
